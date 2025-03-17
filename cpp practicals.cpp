@@ -4,14 +4,13 @@
 #include <iostream> 
 #include <vector> 
 #include <set> 
-using namespace std; 
-
+ 
 double seriesSum(int n) { 
    double sum=0; 
    for (int i =1; i <= n; i++) {  
       double term 1.0/ pow(1, 1); 
       if ( i% 2==0) {
-         sum = term; // Alternate terms are negetive 
+         sum = term;
       } else { 
          sum += term;
       }
@@ -31,7 +30,6 @@ int main() {
 #include <iostream> 
 #include <vector> 
 #include <set> 
-using namespace std; 
 
 void removeDuplicates (vector<int>& arr) { 
      set<int>uniqueElements(arr.begin(), arr.end()):  
@@ -63,7 +61,7 @@ void countOccurrences (string str) {
    map char, int freq; 
 
    for (char : str) { 
-       if (isalpha(c)) { // Consider only alphabets  
+       if (isalpha(c)) {
           freq[tolower(c)]++; 
       }  
    } 
@@ -133,8 +131,6 @@ void toUppercase (char str[]) {
    } 
 } 
 
-// Reverse string 
-
 void reverseString(char str[]) { 
    int len = stringLength (str); 
    for (int i = 0; i < len / 2; i++) {
@@ -152,24 +148,19 @@ int main() {
 
     displayASCII(str1); 
 
-// Concatenation 
 
     concatenateStrings (str1, str2); 
     cout << "Concatenated String: " << str1 << endl; 
 
-       // Comparison 
     cout << "Strings are << (compareStrings (str1, str2) ? "equal": "not equal") << endl; 
 
-       // String length 
     cout << "Length of first string: " << stringLength(str1) << endl; 
 
-       // Convert to uppercase 
     toUppercase(str1); 
     cout << "Uppercase String: "<< str1 << endl;
 
 } 
 
-// Reverse string 
 void reverseString(char str[]) { 
    int len = stringLength(str); 
    for (int i = 0; i < len / 2; i++) { 
@@ -186,20 +177,15 @@ int main() {
 
    displayASCII(str1); 
 
-   // Concatenation 
    concatenateStrings (str1, str2); 
    cout << "Concatenated String: <<<< str1 << endl; 
 
-      // Comparison 
    cout << "Strings are <<< (compareStrings (str1, str2) ? "equal": "not equal") <<< endl; 
 
-      // String length 
    cout << "Length of first string: <<<<< stringLength(str1) << endl; 
 
-      // Convert to uppercase toUppercase(str1); 
    cout << "Uppercase String: <<<<< str1 << endl; 
 
-      // Reverse string 
    reverseString(str1); 
    cout << "Reversed String: <<<< str1 << endl; 
    return 0; 
@@ -210,7 +196,6 @@ int main() {
 
 #include <iostream> 
 #include <vector> 
-using namespace std; 
 
 vector<int> mergeArrays (vector<int>& arr1, vector<int>& arr2) { 
    vector<int> merged; 
@@ -239,7 +224,6 @@ int main() {
 
 #include <iostream> 
 #include <vector> 
-using namespace std; 
 
 // Recursive binary search  
 int binarySearchRecursive (vector<int> arr, int left, int right, int key) { 
@@ -283,8 +267,7 @@ int main() {
 ##7
 
 #include <iostream> 
-using namespace std; 
-   
+    
 // Recursive GCD 
 int gcdRecursive(int a, int b) { 
   return (b==0) ? a: gcdRecursive(b, a% b); 
@@ -603,42 +586,40 @@ return 0;
 
 
 ##14
+#include <cstdio>  // For file handling functions
 
+int main() {
+    FILE *source, *destination;
+    char ch;
 
-#include <iostream> 
-#include <fstream> 
-using namespace std; 
+    // Open the source file in read mode
+    source = fopen("source.txt", "r");
+    if (source == nullptr) {
+        printf("Error: Source file not found or could not be opened.\n");
+        return 1;  // Exit if source file can't be opened
+    }
 
-void removeWhitespace(string inputFile, string outputFile) { 
-   ifstream in(inputFile);  
-   ofstream out (outputFile);  
-   
-   if (!in || !out) { 
-      cout << "Егror opening files!" << endl; 
-      return;  
-   } 
+    // Open the destination file in write mode
+    destination = fopen("destination.txt", "w");
+    if (destination == nullptr) {
+        printf("Error: Could not open destination file for writing.\n");
+        fclose(source);  // Close source file before exiting
+        return 1; 
+    }
 
-   char ch; 
-   while (in.get(ch)) { 
-      if (!isspace(ch)) 
-         out.put(ch);  
-   } 
-   
-   cout << "File copied successfully without whitespaces.\n";  
-   in.close();  
-   out.close();  
-} 
+    // Copy contents from source to destination
+    while ((ch = fgetc(source)) != EOF) {
+        fputc(ch, destination);
+    }
 
-int main() { 
-   string inputFile = "input.txt";  
-   string outputFile = "output.txt"; 
+    printf("File copy successful.\n");
 
-   removeWhitespace (inputFile, outputFile); 
-   return 0;  
-}    
+    // Close both files
+    fclose(source);
+    fclose(destination);
 
-
-
+    return 0;
+}
 
 
    
