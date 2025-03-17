@@ -1,10 +1,11 @@
-##c-practical-
+//##c-practical-
 
-## 1
+//1 :-Write a program to compute the sum of the first n terms of the following serie= 1-1/2²+1/3²-1/4²+1/5² .....The number of terms n is to be taken from the user through the command line. If thecommand line argument is not found ### then prompt the user to enter the value of n.input
+
 #include <iostream> 
 #include <vector> 
 #include <set> 
- 
+using namespace std; 
 double seriesSum(int n) { 
    double sum=0; 
    for (int i =1; i <= n; i++) {  
@@ -21,16 +22,16 @@ int main() {
    int n; 
    cout << "Enter the number of terms: "; 
    cin>>n; 
-   cout "Sum of series: <<< seriesSum(n) endl;  
+   cout <<"Sum of series": << seriesSum(n) endl;  
    return 0; 
 }
 
 
-##2
+//## 2Write a program to remove the duplicates from an array
 #include <iostream> 
 #include <vector> 
 #include <set> 
-
+using namespace std;
 void removeDuplicates (vector<int>& arr) { 
      set<int>uniqueElements(arr.begin(), arr.end()):  
      arr.assign(uniqueElements.begin(), uniqueElements.end()); 
@@ -46,17 +47,13 @@ int main() {
      for (int num arr) cout<< num<<"*; 
       return 0; 
 }
-
-
-
      
-##3
-
- #include <iostream> 
+//##3 Write a program that prints a table indicating the number of occurrences of eachalphabet in the text entered as command line arguments.
+ 
+#include <iostream> 
 #include <string> 
 #include <map> 
-  using namespace std; 
-
+using namespace std;
 void countOccurrences (string str) { 
    map char, int freq; 
 
@@ -80,8 +77,8 @@ int main() {
    return 0; 
 
 
-##4
-
+//##4 Write a menu driven program to perform string manipulation (without using inbuiltstring functions):
+//a. Show address of each character in string
 #include <iostream> 
 #include <cstring> 
 using namespace std; 
@@ -121,6 +118,7 @@ int stringLength(char* str) {
 return len; 
 }
 
+//b. Concatenate two strings
 void toUppercase (char str[]) { 
    int i = 0; 
    while (str[i] != '\0') { 
@@ -160,7 +158,7 @@ int main() {
     cout << "Uppercase String: "<< str1 << endl;
 
 } 
-
+//c. Compare two strings
 void reverseString(char str[]) { 
    int len = stringLength(str); 
    for (int i = 0; i < len / 2; i++) { 
@@ -178,49 +176,72 @@ int main() {
    displayASCII(str1); 
 
    concatenateStrings (str1, str2); 
-   cout << "Concatenated String: <<<< str1 << endl; 
+   cout << "Concatenated String: << str1 << endl; 
 
-   cout << "Strings are <<< (compareStrings (str1, str2) ? "equal": "not equal") <<< endl; 
+   cout << "Strings are << (compareStrings (str1, str2) ? "equal": "not equal") <<< endl; 
 
-   cout << "Length of first string: <<<<< stringLength(str1) << endl; 
+   cout << "Length of first string: << stringLength(str1) << endl; 
 
-   cout << "Uppercase String: <<<<< str1 << endl; 
+   cout << "Uppercase String: << str1 << endl; 
 
    reverseString(str1); 
-   cout << "Reversed String: <<<< str1 << endl; 
+   cout << "Reversed String: << str1 << endl; 
    return 0; 
 }
 
 
-##5 
+//##5 Write a program to merge two ordered arrays to get a single ordered array
 
-#include <iostream> 
-#include <vector> 
+#include <iostream>
+#include <vector>
 
-vector<int> mergeArrays (vector<int>& arr1, vector<int>& arr2) { 
-   vector<int> merged; 
-   int i = 0, j = 0; 
-   
-   while (i < arr1.size() && jarr2.size()) { 
-      if (arr1[i] < arr2[j])
-         merged.push_back(arr1[i++]); 
-      else 
-         merged.push_back(arr2[j++]); 
-   } 
-   while (i < arr1.size()) merged.push_back(arr1[i++]); 
-   while (j < arr2.size()) merged.push_back(arr2[j++]); 
-   return merged; 
-} 
-int main() { 
-    vector<int> arr1= {(1, 3, 5, 5,7};
-    vector<int> arr2 = {2, 4, 6, 8)}; 
-    vector<int> merged = mergeArrays (arr1, агг2); 
-    cout << "Merged sorted array: "; 
-    for (int num: merged) cout << num << " "; 
+using namespace std;
+
+// Function to merge two sorted arrays
+vector<int> mergeArrays(const vector<int>& arr1, const vector<int>& arr2) {
+    vector<int> merged;
+    int i = 0, j = 0;
+
+    // Merge the arrays while both have elements left
+    while (i < arr1.size() && j < arr2.size()) {
+        if (arr1[i] < arr2[j]) {
+            merged.push_back(arr1[i++]);
+        } else {
+            merged.push_back(arr2[j++]);
+        }
+    }
+
+    // Add remaining elements from arr1, if any
+    while (i < arr1.size()) {
+        merged.push_back(arr1[i++]);
+    }
+
+    // Add remaining elements from arr2, if any
+    while (j < arr2.size()) {
+        merged.push_back(arr2[j++]);
+    }
+
+    return merged;
+}
+
+int main() {
+    vector<int> arr1 = {1, 3, 5, 7};
+    vector<int> arr2 = {2, 4, 6, 8};
+
+    // Merge the arrays
+    vector<int> merged = mergeArrays(arr1, arr2);
+
+    // Display the merged array
+    cout << "Merged sorted array: ";
+    for (int num : merged) {
+        cout << num << " ";
+    }
+    cout << endl;
+
     return 0;
-}   
+}
 
-##6
+//##6. Write a program to search a given element in a set of N numbers using Binary search(i) with recursion (ii) without recursion.
 
 #include <iostream> 
 #include <vector> 
