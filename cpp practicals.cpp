@@ -575,7 +575,7 @@ int main() {
    try { 
       checkCompatibility(2, 6, 4, 2); 
    } catch (MatrixException e) { 
-      cout << "Eггог: <<<< e.what() << endl; 
+      cout << "Eггог:" <<<< e.what() << endl; 
    } 
    return 0; 
 }   
