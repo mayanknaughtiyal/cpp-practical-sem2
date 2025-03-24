@@ -176,7 +176,7 @@ int main() {
 
    cout << "Enter first string: "; 
    cin >> str1; 
-   cout << "Enter second string: 
+   cout << "Enter second string: ";
    cin >> str2; 
 
    displayASCII(str1); 
