@@ -156,7 +156,7 @@ int main() {
     concatenateStrings (str1, str2); 
     cout << "Concatenated String: " << str1 << endl; 
 
-    cout << "Strings are << (compareStrings (str1, str2) ? "equal": "not equal") << endl; 
+    cout << "Strings are" << (compareStrings (str1, str2) ? "equal": "not equal") << endl; 
 
     cout << "Length of first string: " << stringLength(str1) << endl; 
 
