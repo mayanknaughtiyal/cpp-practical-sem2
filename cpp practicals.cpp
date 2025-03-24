@@ -625,7 +625,8 @@ int main() {
 
 ##13
 
-#include <iostream using namespace std; 
+#include <iostream>
+using namespace std; 
 
 class Student { 
 public: 
